@@ -1,11 +1,15 @@
-FROM golang:alpine
+FROM golang:1.22.2 as build-stage
 
-RUN mkdir /app
+WORKDIR /src
 
-COPY . /app
+COPY . .
 
-WORKDIR /app
+RUN go mod download
 
-# RUN go run main.go
+RUN go build -o main .
 
-CMD ["go", "run", "main.go"]
+FROM alpine:latest
+
+COPY --from=build-stage /src/main /bin
+
+CMD main

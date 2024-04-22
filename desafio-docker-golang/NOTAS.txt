@@ -1,0 +1,5 @@
+https://docs.docker.com/build/guide/multi-stage/
+https://aprendagolang.com.br/2022/06/17/entenda-o-que-sao-os-arquivos-go-mod-e-go-sum/
+
+docker build -t desafio-docker-golang -f Dockerfile .
+docker run --name=desafio-docker-go desafio-docker-go
