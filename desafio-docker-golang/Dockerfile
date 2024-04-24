@@ -8,7 +8,7 @@ RUN go mod download
 
 RUN go build -o main .
 
-FROM alpine:latest
+FROM scratch
 
 COPY --from=build-stage /src/main /bin
 
