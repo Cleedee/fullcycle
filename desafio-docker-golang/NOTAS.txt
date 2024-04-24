@@ -3,7 +3,8 @@ https://aprendagolang.com.br/2022/06/17/entenda-o-que-sao-os-arquivos-go-mod-e-g
 
 docker build -t desafio-docker-golang -f Dockerfile .
 docker run --name=desafio-docker-go desafio-docker-go
-
+docker tag desafio-docker-golang claudiotorcato/desafio-go:latest
+docker push claudiotorcato/desafio-go:latest
 Para executar:
 ---------------
 docker run claudiotorcato/desafio-go
